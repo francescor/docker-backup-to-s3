@@ -1,11 +1,9 @@
-FROM debian:jessie
+FROM debian:bookworm
 MAINTAINER Ilya Stepanov <dev@ilyastepanov.com>
 
 RUN apt-get update && \
-    apt-get install -y python python-pip cron && \
+    apt-get install -y python-is-python3 cron s3cmd && \
     rm -rf /var/lib/apt/lists/*
-
-RUN pip install s3cmd
 
 ADD s3cfg /root/.s3cfg
 

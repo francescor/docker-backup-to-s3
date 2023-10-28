@@ -18,7 +18,7 @@ if [[ "$1" == 'no-cron' ]]; then
 elif [[ "$1" == 'get' ]]; then
     exec /get.sh
 elif [[ "$1" == 'delete' ]]; then
-    exec /usr/local/bin/s3cmd del -r "$S3_PATH"
+    exec /usr/bin/s3cmd del -r "$S3_PATH"
 else
     LOGFIFO='/var/log/cron.fifo'
     if [[ ! -e "$LOGFIFO" ]]; then
